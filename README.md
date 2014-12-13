@@ -37,16 +37,14 @@ $ yo hapi-style:plugin hapi-space-madness
 #    create hapi-space-madness/.travis.yml
 #    create hapi-space-madness/index.js
 #    create hapi-space-madness/test/index.js
-#
-# ... npm install details ...
 ```
 
 Congratulations, you're the proud owner of a brand new hapi plugin.
 
 ```bash
 $ cd hapi-space-madness
-#
-# ... do all the things ...
+$ npm install
+$ npm test
 ```
 
 
