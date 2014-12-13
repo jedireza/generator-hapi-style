@@ -105,10 +105,5 @@ module.exports = Generators.Base.extend({
         this.mkdir(Path.join(this.pluginName, 'test'));
         this.mkdir(Path.join(this.pluginName, 'test', 'artifacts'));
         this.copy('test/index.js', Path.join(this.pluginName, 'test', 'index.js'));
-    },
-    install: function () {
-
-        process.chdir(Path.join(process.cwd(), this.pluginName));
-        this.npmInstall();
     }
 });
