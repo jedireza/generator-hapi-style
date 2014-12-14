@@ -70,7 +70,7 @@ lab.experiment('Including git repo and git config', function () {
 });
 
 
-lab.experiment('Loacking git repo, git config and license', function () {
+lab.experiment('Lacking git repo, git config and license', function () {
 
     lab.before(function (done) {
 
