@@ -2,9 +2,9 @@
 
 Yeoman generator for scaffolding hapi stuff. Nothing fancy, just the basics.
 
-[![Dependency Status](https://david-dm.org/jedireza/generator-hapi-style.svg)](https://david-dm.org/jedireza/generator-hapi-style)
-[![devDependency Status](https://david-dm.org/jedireza/generator-hapi-style/dev-status.svg?theme=shields.io)](https://david-dm.org/jedireza/generator-hapi-style#info=devDependencies)
 [![Build Status](https://travis-ci.org/jedireza/generator-hapi-style.svg?branch=master)](https://travis-ci.org/jedireza/generator-hapi-style)
+[![Dependency Status](https://david-dm.org/jedireza/generator-hapi-style.svg?style=flat)](https://david-dm.org/jedireza/generator-hapi-style)
+[![devDependency Status](https://david-dm.org/jedireza/generator-hapi-style/dev-status.svg?style=flat)](https://david-dm.org/jedireza/generator-hapi-style#info=devDependencies)
 
 
 ## Install
@@ -21,7 +21,7 @@ $ npm install -g generator-hapi-style
 
 ```bash
 $ yo hapi-style:plugin hapi-space-madness
-#
+
 # ? Description: Activate the plot device.
 # ? Author: Stimpson J. Cat
 # ? Author email: stimpy@farmcrew.email
