@@ -1,6 +1,6 @@
 # generator-hapi-style
 
-Yeoman generator for scaffolding hapi stuff. Nothing fancy, just the basics.
+Yeoman generator for scaffolding hapi stuff.
 
 [![Build Status](https://travis-ci.org/jedireza/generator-hapi-style.svg?branch=master)](https://travis-ci.org/jedireza/generator-hapi-style)
 [![Dependency Status](https://david-dm.org/jedireza/generator-hapi-style.svg?style=flat)](https://david-dm.org/jedireza/generator-hapi-style)
@@ -28,25 +28,25 @@ $ yo hapi-style:app hapi-fan-club
 # ? Git repo: git@github.com:sven/hapi-fan-club.git
 # ? Keywords (space separated) hapi fan site
 # ? License: MIT
-   create hapi-fan-club/server/api/index.js
-   create hapi-fan-club/server/web/index.js
-   create hapi-fan-club/server/web/index.jade
-   create hapi-fan-club/test/config.js
-   create hapi-fan-club/test/index.js
-   create hapi-fan-club/test/manifest.js
-   create hapi-fan-club/test/server/api/index.js
-   create hapi-fan-club/test/server/web/index.js
-   create hapi-fan-club/.editorconfig
-   create hapi-fan-club/.gitignore
-   create hapi-fan-club/.jshintrc
-   create hapi-fan-club/.travis.yml
-   create hapi-fan-club/config.js
-   create hapi-fan-club/LICENSE
-   create hapi-fan-club/package.json
-   create hapi-fan-club/README.md
-   create hapi-fan-club/index.js
-   create hapi-fan-club/manifest.js
-   create hapi-fan-club/server.js
+#   create hapi-fan-club/server/api/index.js
+#   create hapi-fan-club/server/web/index.js
+#   create hapi-fan-club/server/web/index.jade
+#   create hapi-fan-club/test/config.js
+#   create hapi-fan-club/test/index.js
+#   create hapi-fan-club/test/manifest.js
+#   create hapi-fan-club/test/server/api/index.js
+#   create hapi-fan-club/test/server/web/index.js
+#   create hapi-fan-club/.editorconfig
+#   create hapi-fan-club/.gitignore
+#   create hapi-fan-club/.jshintrc
+#   create hapi-fan-club/.travis.yml
+#   create hapi-fan-club/config.js
+#   create hapi-fan-club/LICENSE
+#   create hapi-fan-club/package.json
+#   create hapi-fan-club/README.md
+#   create hapi-fan-club/index.js
+#   create hapi-fan-club/manifest.js
+#   create hapi-fan-club/server.js
 ```
 
 Congratulations, you're the proud owner of a brand new hapi app.
