@@ -38,7 +38,6 @@ $ yo hapi-style:app hapi-fan-club
 #   create hapi-fan-club/test/server/web/index.js
 #   create hapi-fan-club/.editorconfig
 #   create hapi-fan-club/.gitignore
-#   create hapi-fan-club/.jshintrc
 #   create hapi-fan-club/.travis.yml
 #   create hapi-fan-club/config.js
 #   create hapi-fan-club/LICENSE
@@ -73,7 +72,6 @@ $ yo hapi-style:plugin hapi-space-madness
 #    create hapi-space-madness/README.md
 #    create hapi-space-madness/LICENSE
 #    create hapi-space-madness/.editorconfig
-#    create hapi-space-madness/.jshintrc
 #    create hapi-space-madness/.gitignore
 #    create hapi-space-madness/.travis.yml
 #    create hapi-space-madness/index.js
