@@ -32,7 +32,6 @@ var GeneratorPlugin = Proxyquire('../plugin', {
 Code.expect(GeneratorPlugin).to.exist();
 
 
-
 lab.experiment('Including git repo and git config', function () {
 
     lab.before(function (done) {

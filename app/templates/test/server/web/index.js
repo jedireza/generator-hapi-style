@@ -42,7 +42,6 @@ lab.experiment('Home Page View', function () {
     });
 
 
-
     lab.test('home page renders properly', function (done) {
 
         server.inject(request, function (response) {

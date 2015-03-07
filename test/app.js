@@ -32,7 +32,6 @@ var GeneratorApp = Proxyquire('../app', {
 Code.expect(GeneratorApp).to.exist();
 
 
-
 lab.experiment('Including git repo and git config', function () {
 
     lab.before(function (done) {
