@@ -41,21 +41,21 @@ module.exports = Generators.Base.extend({
         var prompts = [{
             name: 'description',
             message: 'Description'
-        },{
+        }, {
             name: 'author',
             message: 'Author',
             default: this.gitConfig.user && this.gitConfig.user.name
-        },{
+        }, {
             name: 'authorEmail',
             message: 'Author email',
             default: this.gitConfig.user && this.gitConfig.user.email
-        },{
+        }, {
             name: 'gitRepo',
             message: 'Git repo'
-        },{
+        }, {
             name: 'keywords',
             message: 'Keywords (space separated)'
-        },{
+        }, {
             name: 'license',
             message: 'License',
             default: 'MIT'
