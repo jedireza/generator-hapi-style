@@ -2,7 +2,7 @@ var Lab = require('lab');
 var Code = require('code');
 var Config = require('../../../config');
 var Hapi = require('hapi');
-var HomePlugin = require('../../../server/web/index');
+var IndexPlugin = require('../../../server/api/index');
 
 
 var lab = exports.lab = Lab.script();
@@ -11,13 +11,9 @@ var request, server;
 
 lab.beforeEach(function (done) {
 
-    var plugins = [ HomePlugin ];
+    var plugins = [ IndexPlugin ];
     server = new Hapi.Server();
-    server.connection({ port: Config.get('/port/web') });
-    server.views({
-        engines: { jade: require('jade') },
-        path: './server/web'
-    });
+    server.connection({ port: Config.get('/port/api') });
     server.register(plugins, function (err) {
 
         if (err) {
@@ -29,7 +25,7 @@ lab.beforeEach(function (done) {
 });
 
 
-lab.experiment('Home Page View', function () {
+lab.experiment('Index Plugin', function () {
 
     lab.beforeEach(function (done) {
 
@@ -42,11 +38,11 @@ lab.experiment('Home Page View', function () {
     });
 
 
-    lab.test('home page renders properly', function (done) {
+    lab.test('it returns the default message', function (done) {
 
         server.inject(request, function (response) {
 
-            Code.expect(response.result).to.match(/activate the plot device/i);
+            Code.expect(response.result.message).to.match(/welcome to the plot device/i);
             Code.expect(response.statusCode).to.equal(200);
 
             done();

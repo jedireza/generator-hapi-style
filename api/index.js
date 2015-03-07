@@ -9,7 +9,7 @@ module.exports = Generators.Base.extend({
 
         Generators.Base.apply(this, arguments);
 
-        this.argument('pluginName', {
+        this.argument('appName', {
             type: String,
             desc: 'In module format. Ex: `hapi-plot-device`',
             required: true
@@ -91,17 +91,42 @@ module.exports = Generators.Base.extend({
     },
     app: function () {
 
-        this.mkdir(this.pluginName);
-        this.template('_package.json', Path.join(this.pluginName, 'package.json'));
-        this.template('_README.md', Path.join(this.pluginName, 'README.md'));
+        this.mkdir(this.appName);
+
+        var serverDir = Path.join('server');
+        this.mkdir(Path.join(this.appName, serverDir));
+
+        var serverApiDir = Path.join(serverDir, 'api');
+        this.mkdir(Path.join(this.appName, serverApiDir));
+        this.copy(Path.join(serverApiDir, 'index.js'), Path.join(this.appName, serverApiDir, 'index.js'));
+
+        var testDir = Path.join('test');
+        this.mkdir(Path.join(this.appName, testDir));
+        this.copy(Path.join(testDir, 'config.js'), Path.join(this.appName, testDir, 'config.js'));
+        this.copy(Path.join(testDir, 'index.js'), Path.join(this.appName, testDir, 'index.js'));
+        this.copy(Path.join(testDir, 'manifest.js'), Path.join(this.appName, testDir, 'manifest.js'));
+
+        var testArtifactsDir = Path.join(testDir, 'artifacts');
+        this.mkdir(Path.join(this.appName, testArtifactsDir));
+
+        var testServerDir = Path.join(testDir, 'server');
+        this.mkdir(Path.join(this.appName, testServerDir));
+
+        var testServerApiDir = Path.join(testServerDir, 'api');
+        this.mkdir(Path.join(this.appName, testServerApiDir));
+        this.copy(Path.join(testServerApiDir, 'index.js'), Path.join(this.appName, testServerApiDir, 'index.js'));
+
+        this.copy('-gitignore', Path.join(this.appName, '.gitignore'));
+        this.copy('-travis.yml', Path.join(this.appName, '.travis.yml'));
+
+        this.template('_config.js', Path.join(this.appName, 'config.js'));
         if (this.license.toUpperCase() === 'MIT') {
-            this.template('_LICENSE', Path.join(this.pluginName, 'LICENSE'));
+            this.template('_LICENSE', Path.join(this.appName, 'LICENSE'));
         }
-        this.copy('-gitignore', Path.join(this.pluginName, '.gitignore'));
-        this.copy('-travis.yml', Path.join(this.pluginName, '.travis.yml'));
-        this.copy('index.js', Path.join(this.pluginName, 'index.js'));
-        this.mkdir(Path.join(this.pluginName, 'test'));
-        this.mkdir(Path.join(this.pluginName, 'test', 'artifacts'));
-        this.copy('test/index.js', Path.join(this.pluginName, 'test', 'index.js'));
+        this.template('_package.json', Path.join(this.appName, 'package.json'));
+        this.template('_README.md', Path.join(this.appName, 'README.md'));
+        this.copy('index.js', Path.join(this.appName, 'index.js'));
+        this.copy('manifest.js', Path.join(this.appName, 'manifest.js'));
+        this.copy('server.js', Path.join(this.appName, 'server.js'));
     }
 });
