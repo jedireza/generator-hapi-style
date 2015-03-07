@@ -8,10 +8,10 @@ var Proxyquire = require('proxyquire');
 
 
 var lab = exports.lab = Lab.script();
-var testDest = Path.join(__dirname, '..', 'tmp-plugin');
+var testDest = Path.join(__dirname, 'generators', 'tmp-plugin');
 var pluginSrc = Path.join(__dirname, '..', 'plugin');
 var pluginName = 'super-awesome-plugin';
-var pluginDest = Path.join(__dirname, '..', 'tmp-plugin', pluginName);
+var pluginDest = Path.join(__dirname, 'generators', 'tmp-plugin', pluginName);
 var internals = { gitConfigErr: false };
 var GeneratorPlugin = Proxyquire('../plugin', {
     'git-config': function (callback) {
