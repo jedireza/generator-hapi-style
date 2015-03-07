@@ -125,7 +125,6 @@ module.exports = Generators.Base.extend({
         this.mkdir(Path.join(this.appName, testServerWebDir));
         this.copy(Path.join(testServerWebDir, 'index.js'), Path.join(this.appName, testServerWebDir, 'index.js'));
 
-        this.copy('-editorconfig', Path.join(this.appName, '.editorconfig'));
         this.copy('-gitignore', Path.join(this.appName, '.gitignore'));
         this.copy('-travis.yml', Path.join(this.appName, '.travis.yml'));
 

@@ -97,7 +97,6 @@ module.exports = Generators.Base.extend({
         if (this.license.toUpperCase() === 'MIT') {
             this.template('_LICENSE', Path.join(this.pluginName, 'LICENSE'));
         }
-        this.copy('-editorconfig', Path.join(this.pluginName, '.editorconfig'));
         this.copy('-gitignore', Path.join(this.pluginName, '.gitignore'));
         this.copy('-travis.yml', Path.join(this.pluginName, '.travis.yml'));
         this.copy('index.js', Path.join(this.pluginName, 'index.js'));
