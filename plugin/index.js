@@ -2,6 +2,7 @@ var Path = require('path');
 var Generators = require('yeoman-generator');
 var GithubUrlFromGit = require('github-url-from-git');
 var GitConfig = require('git-config');
+var Mkdirp = require('mkdirp');
 
 
 module.exports = Generators.Base.extend({
@@ -17,7 +18,7 @@ module.exports = Generators.Base.extend({
     },
     init: function () {
 
-        this.pkg = Generators.file.readJSON(Path.join(__dirname, '../package.json'));
+        this.pkg = this.fs.readJSON(Path.join(__dirname, '../package.json'));
     },
     git: function () {
 
@@ -91,7 +92,7 @@ module.exports = Generators.Base.extend({
     },
     app: function () {
 
-        this.mkdir(this.pluginName);
+        Mkdirp.sync(this.pluginName);
         this.template('_package.json', Path.join(this.pluginName, 'package.json'));
         this.template('_README.md', Path.join(this.pluginName, 'README.md'));
         if (this.license.toUpperCase() === 'MIT') {
@@ -100,8 +101,8 @@ module.exports = Generators.Base.extend({
         this.copy('-gitignore', Path.join(this.pluginName, '.gitignore'));
         this.copy('-travis.yml', Path.join(this.pluginName, '.travis.yml'));
         this.copy('index.js', Path.join(this.pluginName, 'index.js'));
-        this.mkdir(Path.join(this.pluginName, 'test'));
-        this.mkdir(Path.join(this.pluginName, 'test', 'artifacts'));
+        Mkdirp.sync(Path.join(this.pluginName, 'test'));
+        Mkdirp.sync(Path.join(this.pluginName, 'test', 'artifacts'));
         this.copy('test/index.js', Path.join(this.pluginName, 'test', 'index.js'));
     }
 });

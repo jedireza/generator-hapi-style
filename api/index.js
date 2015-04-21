@@ -2,6 +2,7 @@ var Path = require('path');
 var Generators = require('yeoman-generator');
 var GithubUrlFromGit = require('github-url-from-git');
 var GitConfig = require('git-config');
+var Mkdirp = require('mkdirp');
 
 
 module.exports = Generators.Base.extend({
@@ -17,7 +18,7 @@ module.exports = Generators.Base.extend({
     },
     init: function () {
 
-        this.pkg = Generators.file.readJSON(Path.join(__dirname, '../package.json'));
+        this.pkg = this.fs.readJSON(Path.join(__dirname, '../package.json'));
     },
     git: function () {
 
@@ -91,29 +92,29 @@ module.exports = Generators.Base.extend({
     },
     app: function () {
 
-        this.mkdir(this.appName);
+        Mkdirp.sync(this.appName);
 
         var serverDir = Path.join('server');
-        this.mkdir(Path.join(this.appName, serverDir));
+        Mkdirp.sync(Path.join(this.appName, serverDir));
 
         var serverApiDir = Path.join(serverDir, 'api');
-        this.mkdir(Path.join(this.appName, serverApiDir));
+        Mkdirp.sync(Path.join(this.appName, serverApiDir));
         this.copy(Path.join(serverApiDir, 'index.js'), Path.join(this.appName, serverApiDir, 'index.js'));
 
         var testDir = Path.join('test');
-        this.mkdir(Path.join(this.appName, testDir));
+        Mkdirp.sync(Path.join(this.appName, testDir));
         this.copy(Path.join(testDir, 'config.js'), Path.join(this.appName, testDir, 'config.js'));
         this.copy(Path.join(testDir, 'index.js'), Path.join(this.appName, testDir, 'index.js'));
         this.copy(Path.join(testDir, 'manifest.js'), Path.join(this.appName, testDir, 'manifest.js'));
 
         var testArtifactsDir = Path.join(testDir, 'artifacts');
-        this.mkdir(Path.join(this.appName, testArtifactsDir));
+        Mkdirp.sync(Path.join(this.appName, testArtifactsDir));
 
         var testServerDir = Path.join(testDir, 'server');
-        this.mkdir(Path.join(this.appName, testServerDir));
+        Mkdirp.sync(Path.join(this.appName, testServerDir));
 
         var testServerApiDir = Path.join(testServerDir, 'api');
-        this.mkdir(Path.join(this.appName, testServerApiDir));
+        Mkdirp.sync(Path.join(this.appName, testServerApiDir));
         this.copy(Path.join(testServerApiDir, 'index.js'), Path.join(this.appName, testServerApiDir, 'index.js'));
 
         this.copy('-gitignore', Path.join(this.appName, '.gitignore'));

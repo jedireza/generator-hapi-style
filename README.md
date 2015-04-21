@@ -25,6 +25,7 @@ $ yo hapi-style:app hapi-fan-club
 
 ```bash
 $ cd hapi-fan-club
+$ npm install
 $ npm update --save
 $ npm test
 $ npm start
@@ -38,6 +39,7 @@ $ yo hapi-style:api hapi-fan-serve
 
 ```bash
 $ cd hapi-fan-serve
+$ npm install
 $ npm update --save
 $ npm test
 $ npm start
@@ -51,6 +53,7 @@ $ yo hapi-style:web hapi-fan-site
 
 ```bash
 $ cd hapi-fan-site
+$ npm install
 $ npm update --save
 $ npm test
 $ npm start
@@ -64,6 +67,7 @@ $ yo hapi-style:plugin hapi-space-madness
 
 ```bash
 $ cd hapi-space-madness
+$ npm install
 $ npm update --save
 $ npm test
 ```
