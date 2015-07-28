@@ -54,9 +54,6 @@ module.exports = Generators.Base.extend({
             name: 'gitRepo',
             message: 'Git repo'
         }, {
-            name: 'keywords',
-            message: 'Keywords (space separated)'
-        }, {
             name: 'license',
             message: 'License',
             default: 'MIT'
@@ -69,7 +66,6 @@ module.exports = Generators.Base.extend({
             this.authorEmail = answers.authorEmail;
             this.gitRepo = answers.gitRepo;
             this.license = answers.license;
-            this.keywords = JSON.stringify(answers.keywords.split(' '));
             this.year = new Date().getFullYear();
 
             done();

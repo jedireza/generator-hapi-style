@@ -38,7 +38,7 @@ lab.experiment('Including git repo and git config', function () {
 
         YeomanTest.run(appSrc)
             .inDir(testDest)
-            .withArguments([ appName ])
+            .withArguments([appName])
             .withPrompts({
                 description: 'Activate the plot device.',
                 author: 'Stimpson J. Cat',
@@ -77,7 +77,7 @@ lab.experiment('Lacking git repo, git config and license', function () {
 
         YeomanTest.run(appSrc)
             .inDir(testDest)
-            .withArguments([ appName ])
+            .withArguments([appName])
             .withPrompts({
                 description: 'Activate the plot device.',
                 author: 'Stimpson J. Cat',
