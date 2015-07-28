@@ -12,7 +12,6 @@
     "type": "git",
     "url": "<%= gitRepo %>"
   },
-  "keywords": <%= keywords %>,
   "author": "<%= author %><% if (authorEmail) { %> <<%= authorEmail %>><% } %>",
   "license": "<%= license %>",
   "bugs": {
