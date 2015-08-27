@@ -6,6 +6,7 @@
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js server",
     "test": "./node_modules/lab/bin/lab -c -L",
+    "watch": "onchange '*.js' 'test/**/*.js' -- npm test",
     "test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
   },
   "repository": {
@@ -27,6 +28,7 @@
   "devDependencies": {
     "code": "^1.x.x",
     "lab": "^5.x.x",
-    "nodemon": "^1.x.x"
+    "nodemon": "^1.x.x",
+    "onchange": "^2.x.x"
   }
 }
