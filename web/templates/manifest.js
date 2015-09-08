@@ -24,6 +24,7 @@ var manifest = {
         labels: ['web']
     }],
     plugins: {
+        'vision': {},
         'visionary': {
             engines: { jade: 'jade' },
             path: './server/web'

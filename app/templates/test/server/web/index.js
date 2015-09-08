@@ -2,6 +2,7 @@ var Lab = require('lab');
 var Code = require('code');
 var Config = require('../../../config');
 var Hapi = require('hapi');
+var Vision = require('vision');
 var HomePlugin = require('../../../server/web/index');
 
 
@@ -11,18 +12,19 @@ var request, server;
 
 lab.beforeEach(function (done) {
 
-    var plugins = [HomePlugin];
+    var plugins = [Vision, HomePlugin];
     server = new Hapi.Server();
     server.connection({ port: Config.get('/port/web') });
-    server.views({
-        engines: { jade: require('jade') },
-        path: './server/web'
-    });
     server.register(plugins, function (err) {
 
         if (err) {
             return done(err);
         }
+
+        server.views({
+            engines: { jade: require('jade') },
+            path: './server/web'
+        });
 
         done();
     });
