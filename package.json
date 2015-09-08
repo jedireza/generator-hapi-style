@@ -4,8 +4,8 @@
   "description": "Yeoman generator for scaffolding hapi apps and plugins",
   "main": "new/index.js",
   "scripts": {
-    "test": "lab -c -L",
-    "test-cover": "lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
+    "test": "lab -c -L -I makeString",
+    "test-cover": "lab -c  -I makeString -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
     "update": "david update"
   },
   "repository": {
@@ -31,7 +31,8 @@
     "david": "^6.x.x",
     "lab": "^5.x.x",
     "proxyquire": "^1.x.x",
-    "rimraf": "^2.x.x"
+    "rimraf": "^2.x.x",
+    "yo": "^1.4.8"
   },
   "dependencies": {
     "git-config": "0.0.7",

@@ -24,11 +24,12 @@ var manifest = {
         labels: ['web']
     }],
     plugins: {
+        'vision': {},
         'visionary': {
             engines: { jade: 'jade' },
             path: './server/web'
         },
-        './server/api/index': { basePath: '/api' },
+        './server/api/index': [{ routes: { prefix: '/api' } }],
         './server/web/index': {}
     }
 };

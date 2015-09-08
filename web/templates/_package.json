@@ -21,10 +21,11 @@
   "dependencies": {
     "confidence": "^1.x.x",
     "glue": "^2.x.x",
-    "hapi": "^8.x.x",
+    "hapi": "^9.x.x",
     "hoek": "^2.x.x",
     "jade": "^1.x.x",
-    "visionary": "^2.x.x"
+    "vision": "^3.x.x",
+    "visionary": "^3.x.x"
   },
   "devDependencies": {
     "code": "^1.x.x",

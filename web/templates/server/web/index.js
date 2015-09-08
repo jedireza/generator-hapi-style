@@ -15,5 +15,6 @@ exports.register = function (server, options, next) {
 
 
 exports.register.attributes = {
-    name: 'web'
+    name: 'web',
+    dependencies: 'visionary'
 };

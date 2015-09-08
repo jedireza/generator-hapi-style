@@ -21,7 +21,7 @@
   "dependencies": {
     "confidence": "^1.x.x",
     "glue": "^2.x.x",
-    "hapi": "^8.x.x",
+    "hapi": "^9.x.x",
     "hoek": "^2.x.x"
   },
   "devDependencies": {

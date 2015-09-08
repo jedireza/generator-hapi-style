@@ -18,7 +18,7 @@
   },
   "homepage": "<%= homepageUrl %>",
   "devDependencies": {
-    "hapi": "^8.x.x",
+    "hapi": "^9.x.x",
     "code": "^1.x.x",
     "lab": "^5.x.x"
   }
