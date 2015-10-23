@@ -5,8 +5,7 @@
   "main": "new/index.js",
   "scripts": {
     "test": "lab -c -L -I makeString",
-    "test-cover": "lab -c  -I makeString -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html",
-    "update": "david update"
+    "test-cover": "lab -c  -I makeString -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
   },
   "repository": {
     "type": "git",
@@ -28,16 +27,15 @@
   "homepage": "https://github.com/jedireza/generator-hapi-style",
   "devDependencies": {
     "code": "^1.x.x",
-    "david": "^6.x.x",
-    "lab": "^5.x.x",
+    "lab": "^6.x.x",
     "proxyquire": "^1.x.x",
     "rimraf": "^2.x.x",
-    "yo": "^1.4.8"
+    "yo": "^1.x.x"
   },
   "dependencies": {
     "git-config": "0.0.7",
     "github-url-from-git": "^1.x.x",
-    "mkdirp": "^0.5.0",
-    "yeoman-generator": "^0.20.x"
+    "mkdirp": "^0.5.x",
+    "yeoman-generator": "^0.21.x"
   }
 }
