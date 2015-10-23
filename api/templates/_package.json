@@ -4,9 +4,9 @@
   "description": "<%= description %>",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js server",
-    "test": "./node_modules/lab/bin/lab -c -L",
-    "test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
+    "start": "nodemon server.js",
+    "test": "lab -c -L",
+    "test-cover": "lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,12 @@
   "dependencies": {
     "confidence": "^1.x.x",
     "glue": "^2.x.x",
-    "hapi": "^9.x.x",
+    "hapi": "^11.x.x",
     "hoek": "^2.x.x"
   },
   "devDependencies": {
     "code": "^1.x.x",
-    "lab": "^5.x.x",
+    "lab": "^6.x.x",
     "nodemon": "^1.x.x"
   }
 }
