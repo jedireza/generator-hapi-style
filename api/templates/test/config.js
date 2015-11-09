@@ -1,25 +1,25 @@
-var Lab = require('lab');
-var Code = require('code');
-var Config = require('../config');
+'use strict';
+
+const Lab = require('lab');
+const Code = require('code');
+const Config = require('../config');
 
 
-var lab = exports.lab = Lab.script();
+const lab = exports.lab = Lab.script();
 
 
-lab.experiment('Config', function () {
+lab.experiment('Config', () => {
 
-    lab.test('it gets config data', function (done) {
+    lab.test('it gets config data', (done) => {
 
         Code.expect(Config.get('/')).to.be.an.object();
-
         done();
     });
 
 
-    lab.test('it gets config meta data', function (done) {
+    lab.test('it gets config meta data', (done) => {
 
         Code.expect(Config.meta('/')).to.match(/this file configures the plot device/i);
-
         done();
     });
 });
