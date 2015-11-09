@@ -82,14 +82,16 @@ and relevant version details such as:
 ```bash
 $ npm version
 
-# { 'generator-hapi-style': '0.0.0',
-#   npm: '2.5.1',
-#   http_parser: '2.3',
-#   modules: '14',
-#   node: '0.12.0',
-#   openssl: '1.0.1l',
-#   uv: '1.0.2',
-#   v8: '3.28.73',
+# { 'generator-hapi-style': '5.0.0',
+#   npm: '2.14.7',
+#   ares: '1.10.1-DEV',
+#   http_parser: '2.5.0',
+#   icu: '56.1',
+#   modules: '46',
+#   node: '4.2.2',
+#   openssl: '1.0.2d',
+#   uv: '1.7.5',
+#   v8: '4.5.103.35',
 #   zlib: '1.2.8' }
 ```
 

@@ -1,8 +1,10 @@
-var Path = require('path');
-var Generators = require('yeoman-generator');
-var GithubUrlFromGit = require('github-url-from-git');
-var GitConfig = require('git-config');
-var Mkdirp = require('mkdirp');
+'use strict';
+
+const Path = require('path');
+const Generators = require('yeoman-generator');
+const GithubUrlFromGit = require('github-url-from-git');
+const GitConfig = require('git-config');
+const Mkdirp = require('mkdirp');
 
 
 module.exports = Generators.Base.extend({
@@ -22,10 +24,10 @@ module.exports = Generators.Base.extend({
     },
     git: function () {
 
-        var done = this.async();
+        const done = this.async();
         this.gitConfig = {};
 
-        GitConfig(function (err, config) {
+        GitConfig((err, config) => {
 
             if (err) {
                 return done();
@@ -33,13 +35,13 @@ module.exports = Generators.Base.extend({
 
             this.gitConfig = config;
             done();
-        }.bind(this));
+        });
     },
     askFor: function () {
 
-        var done = this.async();
+        const done = this.async();
 
-        var prompts = [{
+        const prompts = [{
             name: 'description',
             message: 'Description'
         }, {
@@ -59,7 +61,7 @@ module.exports = Generators.Base.extend({
             default: 'MIT'
         }];
 
-        this.prompt(prompts, function (answers) {
+        this.prompt(prompts, (answers) => {
 
             this.description = answers.description;
             this.author = answers.author;
@@ -69,7 +71,7 @@ module.exports = Generators.Base.extend({
             this.year = new Date().getFullYear();
 
             done();
-        }.bind(this));
+        });
     },
     github: function () {
 
@@ -78,7 +80,7 @@ module.exports = Generators.Base.extend({
 
         if (this.isGithub) {
             this.bugsUrl = this.homepageUrl + '/issues';
-            var matches = GithubUrlFromGit.re.exec(this.gitRepo);
+            const matches = GithubUrlFromGit.re.exec(this.gitRepo);
             this.githubOwner = matches[2].split('/')[0];
         }
         else {
@@ -90,27 +92,27 @@ module.exports = Generators.Base.extend({
 
         Mkdirp.sync(this.appName);
 
-        var serverDir = Path.join('server');
+        const serverDir = Path.join('server');
         Mkdirp.sync(Path.join(this.appName, serverDir));
 
-        var serverWebDir = Path.join(serverDir, 'web');
+        const serverWebDir = Path.join(serverDir, 'web');
         Mkdirp.sync(Path.join(this.appName, serverWebDir));
         this.copy(Path.join(serverWebDir, 'index.js'), Path.join(this.appName, serverWebDir, 'index.js'));
         this.copy(Path.join(serverWebDir, 'index.jade'), Path.join(this.appName, serverWebDir, 'index.jade'));
 
-        var testDir = Path.join('test');
+        const testDir = Path.join('test');
         Mkdirp.sync(Path.join(this.appName, testDir));
         this.copy(Path.join(testDir, 'config.js'), Path.join(this.appName, testDir, 'config.js'));
         this.copy(Path.join(testDir, 'index.js'), Path.join(this.appName, testDir, 'index.js'));
         this.copy(Path.join(testDir, 'manifest.js'), Path.join(this.appName, testDir, 'manifest.js'));
 
-        var testArtifactsDir = Path.join(testDir, 'artifacts');
+        const testArtifactsDir = Path.join(testDir, 'artifacts');
         Mkdirp.sync(Path.join(this.appName, testArtifactsDir));
 
-        var testServerDir = Path.join(testDir, 'server');
+        const testServerDir = Path.join(testDir, 'server');
         Mkdirp.sync(Path.join(this.appName, testServerDir));
 
-        var testServerWebDir = Path.join(testServerDir, 'web');
+        const testServerWebDir = Path.join(testServerDir, 'web');
         Mkdirp.sync(Path.join(this.appName, testServerWebDir));
         this.copy(Path.join(testServerWebDir, 'index.js'), Path.join(this.appName, testServerWebDir, 'index.js'));
 

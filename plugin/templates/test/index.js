@@ -1,18 +1,20 @@
-var Lab = require('lab');
-var Code = require('code');
-var Hapi = require('hapi');
-var Plugin = require('..');
+'use strict';
+
+const Lab = require('lab');
+const Code = require('code');
+const Hapi = require('hapi');
+const Plugin = require('..');
 
 
-var lab = exports.lab = Lab.script();
+const lab = exports.lab = Lab.script();
 
 
-lab.experiment('Plugin Registration', function () {
+lab.experiment('Plugin Registration', () => {
 
-    lab.test('it registers successfully', function (done) {
+    lab.test('it registers successfully', (done) => {
 
-        var server = new Hapi.Server();
-        server.register(Plugin, function (err) {
+        const server = new Hapi.Server();
+        server.register(Plugin, (err) => {
 
             Code.expect(err).to.not.exist();
             done();

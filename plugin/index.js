@@ -1,8 +1,10 @@
-var Path = require('path');
-var Generators = require('yeoman-generator');
-var GithubUrlFromGit = require('github-url-from-git');
-var GitConfig = require('git-config');
-var Mkdirp = require('mkdirp');
+'use strict';
+
+const Path = require('path');
+const Generators = require('yeoman-generator');
+const GithubUrlFromGit = require('github-url-from-git');
+const GitConfig = require('git-config');
+const Mkdirp = require('mkdirp');
 
 
 module.exports = Generators.Base.extend({
@@ -22,10 +24,10 @@ module.exports = Generators.Base.extend({
     },
     git: function () {
 
-        var done = this.async();
+        const done = this.async();
         this.gitConfig = {};
 
-        GitConfig(function (err, config) {
+        GitConfig((err, config) => {
 
             if (err) {
                 return done();
@@ -33,13 +35,13 @@ module.exports = Generators.Base.extend({
 
             this.gitConfig = config;
             done();
-        }.bind(this));
+        });
     },
     askFor: function () {
 
-        var done = this.async();
+        const done = this.async();
 
-        var prompts = [{
+        const prompts = [{
             name: 'description',
             message: 'Description'
         }, {
@@ -59,7 +61,7 @@ module.exports = Generators.Base.extend({
             default: 'MIT'
         }];
 
-        this.prompt(prompts, function (answers) {
+        this.prompt(prompts, (answers) => {
 
             this.description = answers.description;
             this.author = answers.author;
@@ -69,7 +71,7 @@ module.exports = Generators.Base.extend({
             this.year = new Date().getFullYear();
 
             done();
-        }.bind(this));
+        });
     },
     github: function () {
 
@@ -78,7 +80,7 @@ module.exports = Generators.Base.extend({
 
         if (this.isGithub) {
             this.bugsUrl = this.homepageUrl + '/issues';
-            var matches = GithubUrlFromGit.re.exec(this.gitRepo);
+            const matches = GithubUrlFromGit.re.exec(this.gitRepo);
             this.githubOwner = matches[2].split('/')[0];
         }
         else {

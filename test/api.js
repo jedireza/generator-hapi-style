@@ -1,19 +1,21 @@
-var Lab = require('lab');
-var Code = require('code');
-var Path = require('path');
-var Rimraf = require('rimraf');
-var YeomanTest = require('yeoman-generator').test;
-var YeomanAssert = require('yeoman-generator').assert;
-var Proxyquire = require('proxyquire');
+'use strict';
+
+const Lab = require('lab');
+const Code = require('code');
+const Path = require('path');
+const Rimraf = require('rimraf');
+const YeomanTest = require('yeoman-generator').test;
+const YeomanAssert = require('yeoman-generator').assert;
+const Proxyquire = require('proxyquire');
 
 
-var lab = exports.lab = Lab.script();
-var testDest = Path.join(__dirname, 'generators', 'tmp-api');
-var appSrc = Path.join(__dirname, '..', 'api');
-var appName = 'super-awesome-api';
-var appDest = Path.join(__dirname, 'generators', 'tmp-api', appName);
-var internals = { gitConfigErr: false };
-var GeneratorApp = Proxyquire('../api', {
+const lab = exports.lab = Lab.script();
+const testDest = Path.join(__dirname, 'generators', 'tmp-api');
+const appSrc = Path.join(__dirname, '..', 'api');
+const appName = 'super-awesome-api';
+const appDest = Path.join(__dirname, 'generators', 'tmp-api', appName);
+const internals = { gitConfigErr: false };
+const GeneratorApp = Proxyquire('../api', {
     'git-config': function (callback) {
 
         if (internals.gitConfigErr) {
@@ -32,9 +34,9 @@ var GeneratorApp = Proxyquire('../api', {
 Code.expect(GeneratorApp).to.exist();
 
 
-lab.experiment('Including git repo and git config', function () {
+lab.experiment('Including git repo and git config', () => {
 
-    lab.before(function (done) {
+    lab.before((done) => {
 
         YeomanTest.run(appSrc)
             .inDir(testDest)
@@ -50,12 +52,12 @@ lab.experiment('Including git repo and git config', function () {
             .on('end', done);
     });
 
-    lab.after(function (done) {
+    lab.after((done) => {
 
         Rimraf(testDest, done);
     });
 
-    lab.test('it generates files successfully', function (done) {
+    lab.test('it generates files successfully', (done) => {
 
         YeomanAssert.file([
             Path.join(appDest, 'index.js'),
@@ -69,9 +71,9 @@ lab.experiment('Including git repo and git config', function () {
 });
 
 
-lab.experiment('Lacking git repo, git config and license', function () {
+lab.experiment('Lacking git repo, git config and license', () => {
 
-    lab.before(function (done) {
+    lab.before((done) => {
 
         internals.gitConfigErr = true;
 
@@ -89,12 +91,12 @@ lab.experiment('Lacking git repo, git config and license', function () {
             .on('end', done);
     });
 
-    lab.after(function (done) {
+    lab.after((done) => {
 
         Rimraf(testDest, done);
     });
 
-    lab.test('it generates files successfully', function (done) {
+    lab.test('it generates files successfully', (done) => {
 
         YeomanAssert.file([
             Path.join(appDest, 'index.js'),
