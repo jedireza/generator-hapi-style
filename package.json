@@ -1,6 +1,6 @@
 {
   "name": "generator-hapi-style",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Yeoman generator for scaffolding hapi apps and plugins",
   "main": "new/index.js",
   "scripts": {
