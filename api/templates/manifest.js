@@ -25,9 +25,11 @@ const manifest = {
         port: Config.get('/port/api'),
         labels: ['api']
     }],
-    plugins: {
-        './server/api/index': {}
-    }
+    registrations: [
+        {
+            plugin: './server/api/index'
+        }
+    ]
 };
 
 

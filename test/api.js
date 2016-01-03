@@ -4,8 +4,8 @@ const Lab = require('lab');
 const Code = require('code');
 const Path = require('path');
 const Rimraf = require('rimraf');
-const YeomanTest = require('yeoman-generator').test;
-const YeomanAssert = require('yeoman-generator').assert;
+const YeomanTest = require('yeoman-test');
+const YeomanAssert = require('yeoman-assert');
 const Proxyquire = require('proxyquire');
 
 

@@ -25,14 +25,23 @@ const manifest = {
         port: Config.get('/port/web'),
         labels: ['web']
     }],
-    plugins: {
-        'vision': {},
-        'visionary': {
-            engines: { jade: 'jade' },
-            path: './server/web'
+    registrations: [
+        {
+            plugin: 'vision'
         },
-        './server/web/index': {}
-    }
+        {
+            plugin: {
+                register: 'visionary',
+                options: {
+                    engines: { jade: 'jade' },
+                    path: './server/web'
+                }
+            }
+        },
+        {
+            plugin: './server/web/index'
+        }
+    ]
 };
 
 
