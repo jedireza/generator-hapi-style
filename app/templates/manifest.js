@@ -25,15 +25,31 @@ const manifest = {
         port: Config.get('/port/web'),
         labels: ['web']
     }],
-    plugins: {
-        'vision': {},
-        'visionary': {
-            engines: { jade: 'jade' },
-            path: './server/web'
+    registrations: [
+        {
+            plugin: 'vision'
         },
-        './server/api/index': [{ routes: { prefix: '/api' } }],
-        './server/web/index': {}
-    }
+        {
+            plugin: {
+                register: 'visionary',
+                options: {
+                    engines: { jade: 'jade' },
+                    path: './server/web'
+                }
+            }
+        },
+        {
+            plugin: {
+                register: './server/api/index'
+            },
+            options: {
+                routes: { prefix: '/api' }
+            }
+        },
+        {
+            plugin: './server/web/index'
+        }
+    ]
 };
 
 
