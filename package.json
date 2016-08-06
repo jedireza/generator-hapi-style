@@ -13,6 +13,7 @@
   },
   "keywords": [
     "hapi",
+    "boilerplate",
     "plugin",
     "generator",
     "yeoman",
@@ -29,7 +30,7 @@
   },
   "homepage": "https://github.com/jedireza/generator-hapi-style",
   "devDependencies": {
-    "code": "2.x.x",
+    "code": "3.x.x",
     "lab": "10.x.x",
     "proxyquire": "1.x.x",
     "rimraf": "2.x.x",
@@ -41,6 +42,6 @@
     "git-config": "0.0.7",
     "github-url-from-git": "1.x.x",
     "mkdirp": "0.5.x",
-    "yeoman-generator": "0.22.x"
+    "yeoman-generator": "0.24.x"
   }
 }
