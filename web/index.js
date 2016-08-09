@@ -39,8 +39,6 @@ module.exports = Generators.Base.extend({
     },
     askFor: function () {
 
-        const done = this.async();
-
         const prompts = [{
             name: 'description',
             message: 'Description'
@@ -61,7 +59,7 @@ module.exports = Generators.Base.extend({
             default: 'MIT'
         }];
 
-        this.prompt(prompts, (answers) => {
+        return this.prompt(prompts).then((answers) => {
 
             this.description = answers.description;
             this.author = answers.author;
@@ -69,8 +67,6 @@ module.exports = Generators.Base.extend({
             this.gitRepo = answers.gitRepo;
             this.license = answers.license;
             this.year = new Date().getFullYear();
-
-            done();
         });
     },
     github: function () {
