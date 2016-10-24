@@ -3,7 +3,7 @@
 <%= description %><% if (isGithub) { %>
 
 [![Dependency Status](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>.svg)](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>)
-[![devDependency Status](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>/dev-status.svg?theme=shields.io)](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>#info=devDependencies)
+[![devDependency Status](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>/dev-status.svg?theme=shields.io)](https://david-dm.org/<%= githubOwner %>/<%= pluginName %>?type=dev)
 [![Build Status](https://travis-ci.org/<%= githubOwner %>/<%= pluginName %>.svg?branch=master)](https://travis-ci.org/<%= githubOwner %>/<%= pluginName %>)<% } %>
 
 
