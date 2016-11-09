@@ -9,7 +9,7 @@ Composer((err, server) => {
         throw err;
     }
 
-    server.start(() => {
+    server.start((err) => {
 
         if (err) {
             throw err;
