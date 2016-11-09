@@ -9,10 +9,10 @@ Composer((err, server) => {
         throw err;
     }
 
-    server.start((err) => {
+    server.start((error) => {
 
-        if (err) {
-            throw err;
+        if (error) {
+            throw error;
         }
 
         console.log('Started the plot device on port ' + server.info.port);
